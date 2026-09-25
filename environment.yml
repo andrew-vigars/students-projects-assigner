@@ -1,8 +1,0 @@
-name: students-projects-assigner
-channels:
-  - defaults
-dependencies:
-  - python>=3.8
-  - numpy
-  - pandas
-  - scipy

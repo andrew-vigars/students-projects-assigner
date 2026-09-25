@@ -1,0 +1,11 @@
+[console_scripts]
+annotate-assignment = annotate_assignment:main
+convert-prefs = convert_prefs:main
+convert-topics = convert_topics:main
+export-assignment = export_assignment:main
+finalize-assignment = finalize_assignment:main
+find-duplicate-submissions = find_duplicate_submissions:main
+process-data = process_data:main
+resolve-unmatched-choices = resolve_unmatched_choices:main
+run-assigner = assigner:main
+verify-assignment = verify_assignment:main

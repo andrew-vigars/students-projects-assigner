@@ -1,12 +1,13 @@
 # pip install numpy pandas scipy
+import os
 import numpy as np
 import pandas as pd
 from scipy.optimize import linear_sum_assignment
 
 # ==================== CONFIG ====================
-PREFS_CSV = "prefs_sample.csv"        # wide format with columns: student, rank1..rank5
-# TOPICS_CSV = "topics.csv"          # optional: master list of topics
-SAVE_PREFIX = "assignment"      # writes assignment.csv, assignment_summary.csv
+PREFS_CSV = "data_files/processed/prefs.csv"        # wide format with columns: student, rank1..rank5
+TOPICS_CSV = "data_files/processed/topics.csv"          # optional: master list of topics
+SAVE_PREFIX = "data_files/final/assignment"      # writes assignment.csv, assignment_summary.csv
 SEED = 2025                     # change for a different random outcome; None -> non-deterministic
 EPS_JITTER = 1e-3               # tiny noise to break ties without changing rank order
 
@@ -246,6 +247,9 @@ def main():
     summary_df = pd.DataFrame([summary])
 
     # Save
+    _save_dir = os.path.dirname(SAVE_PREFIX)
+    if _save_dir:
+        os.makedirs(_save_dir, exist_ok=True)
     assigned.to_csv(f"{SAVE_PREFIX}.csv", index=False)
     summary_df.to_csv(f"{SAVE_PREFIX}_summary.csv", index=False)
     
