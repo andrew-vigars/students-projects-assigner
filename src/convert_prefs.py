@@ -117,7 +117,8 @@ def main():
         utorid = row[COL_UTORID]
         name = row[COL_NAME]
 
-        if re.fullmatch(r"\d+", utorid):
+        if utorid.replace(" ", "").isdigit():
+            # catches "1012464325" and also "100 915 9205" (a student number typed with spaces)
             flagged_utorid_rows.append({"utorid_field": utorid, "name": name})
 
         rank_values = {}

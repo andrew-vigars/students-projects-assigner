@@ -1,5 +1,5 @@
 """
-CLI wrapper for STAGE 4 (export final results out of the repo). Lets you
+CLI wrapper for STAGE 5 (export final results out of the repo). Lets you
 run it directly without installing the package, e.g. from a fresh clone:
 
     python scripts/export_assignment.py

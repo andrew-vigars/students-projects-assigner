@@ -15,13 +15,15 @@ dependencies = [
 process-data = "process_data:main"              # stage 1: raw -> processed (stops for review)
 finalize-assignment = "finalize_assignment:main" # stage 2: processed -> final
 verify-assignment = "verify_assignment:main"     # stage 3: reconcile final output against raw sources
-export-assignment = "export_assignment:main"     # stage 4: copy final results to Mini-Project/Assigned-Topics
+assign-unregistered-students = "assign_unregistered_students:main" # stage 4 (optional): random topic for no-shows
+export-assignment = "export_assignment:main"     # stage 5: copy final results to Mini-Project/Assigned-Topics
 
 # Individual steps, for advanced/manual use (process-data runs these for you):
 convert-topics = "convert_topics:main"
 convert-prefs = "convert_prefs:main"
 resolve-unmatched-choices = "resolve_unmatched_choices:main"
 find-duplicate-submissions = "find_duplicate_submissions:main"
+apply-topic-overrides = "apply_topic_overrides:main"
 run-assigner = "assigner:main"
 annotate-assignment = "annotate_assignment:main"
 
@@ -38,10 +40,12 @@ py-modules = [
     "resolve_unmatched_choices",
     "annotate_assignment",
     "find_duplicate_submissions",
+    "apply_topic_overrides",
     "process_data",
     "finalize_assignment",
     "verify_assignment",
     "export_assignment",
+    "assign_unregistered_students",
 ]
 
 [tool.setuptools.package-dir]

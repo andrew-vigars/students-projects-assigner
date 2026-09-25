@@ -1,9 +1,0 @@
-Metadata-Version: 2.4
-Name: students-projects-assigner
-Version: 0.1.0
-Summary: Assigns students to project topics based on ranked preferences.
-Requires-Python: >=3.8
-Requires-Dist: numpy
-Requires-Dist: pandas
-Requires-Dist: scipy
-Requires-Dist: openpyxl
